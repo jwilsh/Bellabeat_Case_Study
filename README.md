@@ -1,81 +1,96 @@
-# Bellabeat-Case-Study
-Google Data Analytics Capstone (Case Study)
+# Bellabeat_Case_Study
+This project is a documentation of my capstone project. The final case study at the end of the last module from the [title](https://www.coursera.org/professional-certificates/google-data-analytics) course. This case study showcases some of the skills that I have inherited during the course across different tools used in data analysis.
 
-# Project Name
-This project is a part of the [Data Science Working Group](http://datascience.codeforsanfrancisco.org) at [Code for San Francisco](http://www.codeforsanfrancisco.org).  Other DSWG projects can be found at the [main GitHub repo](https://github.com/sfbrigade/data-science-wg).
+# Scenario
+Bellabeat is a high-tech manufacturer of health-focused products specifically for women. Bellabeqat is a successful small company, however they have a vision of becoming one of the major players in the global smart device market. The Co-founder of Bellabeat Urška Sršen, beleives that by analysing smart device fitness data can help unlock new growth opportunities for the company. 
 
-#### -- Project Status: [Active, On-Hold, Completed]
+We will be looking at data from an existing dataset [title](https://www.kaggle.com/datasets/arashnic/fitbit) to determine if there are any trends that we can identify. These insights will then be used to give high level recommendations to guide the marketing strategy for the company.
 
-## Project Intro/Objective
-The purpose of this project is ________. (Describe the main goals of the project and potential civic impact. Limit to a short paragraph, 3-6 Sentences)
+# 1.0 Ask
 
-### Partner
-* [Name of Partner organization/Government department etc..]
-* Website for partner
-* Partner contact: [Name of Contact], [slack handle of contact if any]
-* If you do not have a partner leave this section out
+### 1.1 Business Task:
+Use the data provided in the [title](https://www.kaggle.com/datasets/arashnic/fitbit) dataset to gain insights into how people use non-Bellabeat smart devices. Use these insights to help guide the marketing strategy for the company.
 
-### Methods Used
-* Inferential Statistics
-* Machine Learning
-* Data Visualization
-* Predictive Modeling
-* etc.
+### 1.2 Business Objectives:
+- What are some trends in smart device usage?
+- How could these trends apply to Bellabeat customers?
+- How could these trends help influence Bellabeat marketing strategy?
 
-### Technologies
-* R 
-* Python
-* D3
-* PostGres, MySql
-* Pandas, jupyter
-* HTML
-* JavaScript
-* etc. 
+### 1.3 Deliverables:
+- A clear summary of the business task
+- A description of all data sources used
+- Documentation of any cleaning or manipulation of data
+- A summary of your analysis
+- Supporting visualizations and key findings
+- Your top high-level content recommendations based on your analysis
 
-## Project Description
-(Provide more detailed overview of the project.  Talk a bit about your data sources and what questions and hypothesis you are exploring. What specific data analysis/visualization and modelling work are you using to solve the problem? What blockers and challenges are you facing?  Feel free to number or bullet point things here)
+### 1.4 Key Stakeholders:
+**- Urška Sršen:** Bellabeat’s cofounder and Chief Creative Officer
+**- Sando Mur:** Mathematician and Bellabeat’s cofounder; key member of the Bellabeat executive team
+**- Bellabeat marketing analytics team:** A team of data analysts responsible for collecting, analyzing, and
+reporting data that helps guide Bellabeat’s marketing strategy.
 
-## Needs of this project
+### Products:
+**- Bellabeat app:** The Bellabeat app provides users with health data related to their activity, sleep, stress,
+menstrual cycle, and mindfulness habits. This data can help users better understand their current habits
+and make healthy decisions. The Bellabeat app connects to their line of smart wellness products.
+**- Leaf:** Bellabeat’s classic wellness tracker can be worn as a bracelet, necklace, or clip. The Leaf tracker connects
+to the Bellabeat app to track activity, sleep, and stress.
+**- Time:** This wellness watch combines the timeless look of a classic timepiece with smart technology to track user
+activity, sleep, and stress. The Time watch connects to the Bellabeat app to provide you with insights into your
+daily wellness.
+**- Spring:** This is a water bottle that tracks daily water intake using smart technology to ensure that you are
+appropriately hydrated throughout the day. The Spring bottle connects to the Bellabeat app to track
+your hydration levels.
+**- Bellabeat membership:** Bellabeat also offers a subscription-based membership program for users.
+Membership gives users 24/7 access to fully personalized guidance on nutrition, activity, sleep, health
+and beauty, and mindfulness based on their lifestyle and goals.
 
-- frontend developers
-- data exploration/descriptive statistics
-- data processing/cleaning
-- statistical modeling
-- writeup/reporting
-- etc. (be as specific as possible)
+# 2.0 Prepare
 
-## Getting Started
+### 2.1 Information on Data Source:
+- Data is publicly available on Kaggle: FitBit Fitness Tracker Data and stored in 18 csv files.
+- Generated by respondents from a survey via Amazon Mechanical Turk between 12 March 2016 to 12 May 2016.
+- 30 FitBit users consented to the submission of personal tracker data.
+- Data collected includes physical activity recorded in minutes, heart rate, sleep monitoring, daily activity and steps.
 
-1. Clone this repo (for help see this [tutorial](https://help.github.com/articles/cloning-a-repository/)).
-2. Raw Data is being kept [here](Repo folder containing raw data) within this repo.
+### 2.2 Limitations of Data Set:
+- Data is collected 5 years ago in 2016. Users’ daily activity, fitness and sleeping habits, diet and food consumption may have changed since then. Data may not be timely or relevant.
+- Sample size of 30 FitBit users is not representative of the entire fitness population. The central limit theorem general rule of n≥30 applies and we can use the t test for statstic reference. However, a larger sample size is preferred for the analysis.
+- As data is collected in a survey, we are unable to ascertain its integrity or accuracy.
+- After further investigation with n_distinct() to check for unique user Id, the set has 33 user data from daily activity, 24 from sleep and only 8 from weight. There are 3 extra users and some users did not record their data for tracking daily activity and sleep.
+- For the 8 user data for weight, 5 users manually entered their weight and 3 recorded via a connected wifi device (eg: wifi scale).
+- Most data is recorded from Tuesday to Thursday, which may not be comprehensive enough to form an accurate analysis.
 
-    *If using offline data mention that and how they may obtain the data from the froup)*
-    
-3. Data processing/transformation scripts are being kept [here](Repo folder containing data processing scripts/notebooks)
-4. etc...
+### 2.3 Is Data ROCCC?
+A good data source is ROCCC which stands for Reliable, Original, Comprehensive, Current, and Cited.
 
-*If your project is well underway and setup is fairly complicated (ie. requires installation of many packages) create another "setup.md" file and link to it here*  
+Reliable — LOW — Not reliable as it only has 30 respondents
+Original — LOW — Third party provider (Amazon Mechanical Turk)
+Comprehensive — MED — Parameters match most of Bellabeat products’ parameters
+Current — LOW — Data is 5 years old and may not be relevant
+Cited — LOW — Data collected from third party, hence unknown
+Overall, the dataset is considered bad quality data and it is not recommended to produce business recommendations based on this data.
 
-5. Follow setup [instructions](Link to file)
+### 2.4 Data Selection
+The following file is selected and copied for analysis.
 
-## Featured Notebooks/Analysis/Deliverables
-* [Notebook/Markdown/Slide Deck Title](link)
-* [Notebook/Markdown/Slide DeckTitle](link)
-* [Blog Post](link)
+dailyActivity_merged.csv
 
+### 2.5 Tool
+We are using SQL for data cleaning and transformation. Tableau is being used for the visualisations.
 
-## Contributing DSWG Members
+# 3.0 Process
+### 3.1 P
 
-**Team Leads (Contacts) : [Full Name](https://github.com/[github handle])(@slackHandle)**
+# 4.0 Analyse
 
-#### Other Members:
+# 5.0 Share
 
-|Name     |  Slack Handle   | 
-|---------|-----------------|
-|[Full Name](https://github.com/[github handle])| @johnDoe        |
-|[Full Name](https://github.com/[github handle]) |     @janeDoe    |
+# 6.0 Act
+
 
 ## Contact
-* If you haven't joined the SF Brigade Slack, [you can do that here](http://c4sf.me/slack).  
-* Our slack channel is `#datasci-projectname`
-* Feel free to contact team leads with any questions or if you are interested in contributing!
+* https://github.com/jwilsh
+* https://www.kaggle.com/jwilsh
+* 
