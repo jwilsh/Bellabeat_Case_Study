@@ -90,6 +90,7 @@ We are using BigQuery in Google Cloud for data cleaning and transformation. Tabl
 ### 3.1 Setting-Up the Environement
 A new project is created withtin BigQuery whith a relevent title for the project 'bellebeat-capstone-case-study'. We then created a new dataset within the project with the title 'FitBit_Fitness_Tracker_Data
 '.
+![Preparing the Environement](https://github.com/jwilsh/Bellabeat_Case_Study/assets/98908958/0e7d8993-7c6e-4e1e-a5a2-45e072718bcd)
 
 ### 3.2 Importing the Dataset
 The .cvs files from ealrier were uploaded onto this newly created dataset.
