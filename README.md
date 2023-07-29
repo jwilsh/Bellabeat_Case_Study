@@ -96,16 +96,14 @@ A new project is created withtin BigQuery whith a relevent title for the project
 ### 3.2 Importing the Dataset
 The .cvs files from ealrier were uploaded onto this newly created dataset.
 
-![Importing Dataset](https://github.com/jwilsh/Bellabeat_Case_Study/assets/98908958/c8f2edd4-4289-4aa3-b24c-b929bb0acedf)
-
 ### 3.2 Preview the Data and it's Structure
 The .cvs files from ealrier were uploaded onto this newly created dataset. Here you can see a preview of the dataset.
 
-![Data Preview 1](https://github.com/jwilsh/Bellabeat_Case_Study/assets/98908958/e430154c-bc89-4460-842f-597fe0466dd2)
+![Data Preview 2](https://github.com/jwilsh/Bellabeat_Case_Study/assets/98908958/dae534ce-65a4-4257-bb4a-d56fbeb27647)
 
 You can check the structure of the data in the 'schema' tab.
 
-![Data Preview 2](https://github.com/jwilsh/Bellabeat_Case_Study/assets/98908958/dae534ce-65a4-4257-bb4a-d56fbeb27647)
+![Data Preview 1](https://github.com/jwilsh/Bellabeat_Case_Study/assets/98908958/e430154c-bc89-4460-842f-597fe0466dd2)
 
 Information of the data including how many rows it contains in the 'Details' tab.
 
