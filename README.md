@@ -83,10 +83,33 @@ The following file is selected and copied for analysis.
 dailyActivity_merged.csv
 
 ### 2.5 Tool
-We are using SQL for data cleaning and transformation. Tableau is being used for the visualisations.
+We are using BigQuery in Google Cloud for data cleaning and transformation. Tableau is being used for the visualisations.
 
 # 3.0 Process
-### 3.1 P
+
+### 3.1 Setting-Up the Environement
+A new project is created withtin BigQuery whith a relevent title for the project 'bellebeat-capstone-case-study'. We then created a new dataset within the project with the title 'FitBit_Fitness_Tracker_Data
+'.
+
+### 3.2 Importing the Dataset
+The .cvs files from ealrier were uploaded onto this newly created dataset.
+
+### 3.2 Preview the Data and it's Structure
+The .cvs files from ealrier were uploaded onto this newly created dataset. Here you can see a preview of the dataset.
+
+You can check the structure of the data in the 'schema' tab.
+
+Information of the data including how many rows it contains in the 'Details' tab.
+
+### 3.3 Data Cleaning and Manipulation
+Now that we are familiar with the structure of the data we can clean the data by checking for any errors.
+
+### 3.3.1 Check the number of participants for each data set
+Its important to check that the same amount of participants have participated in all of our datasets.
+```
+SELECT COUNT(distinct Id)
+ FROM `bellebeat-capstone-case-study.FitBit_Fitness_Tracker_Data.dailyActivity`
+```
 
 # 4.0 Analyse
 
