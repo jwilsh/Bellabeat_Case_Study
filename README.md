@@ -133,6 +133,8 @@ WHERE Id is null
 ```
 
 
+### 3.3.2 Check If Correct Datatypes are Applied
+Luckily all of the collumns have the correct data type applied so there will be no need to chnage these.
 
 ### 3.4 Data Manipulation & Transformation
 After checking for dirty data its now time for some data manipultion to get it ready for some analysis. Below are the steps I took in order to transform the data ready to create some visualisations with.
