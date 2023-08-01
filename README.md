@@ -119,6 +119,37 @@ SELECT COUNT(distinct Id)
  FROM `bellebeat-capstone-case-study.FitBit_Fitness_Tracker_Data.dailyActivity`
 ```
 
+
+
+### 3.3.2 Check Data for null or Missing Values
+All columns were checked for Null data or missing values. However none were found.
+
+```
+SELECT Id
+
+FROM `bellebeat-capstone-case-study.FitBit_Fitness_Tracker_Data.dailyActivity` 
+
+WHERE Id is null
+```
+
+
+
+### 3.4 Data Manipulation & Transformation
+After checking for dirty data its now time for some data manipultion to get it ready for some analysis. Below are the steps I took in order to transform the data ready to create some visualisations with.
+
+- Create new column DayOfTheWeek by generating date in the form of day of the week for further analysis.
+
+- Create new column TotalMinutes being the sum of VeryActiveMinutes, FairlyActiveMinutes, LightlyActiveMinutes and SedentaryMinutes.
+
+- Create new column TotalHours by converting new column TotalMinutes to number of hours.
+
+- Rearrange and rename columns.
+
+```
+ALTER TABLE `bellebeat-capstone-case-study.FitBit_Fitness_Tracker_Data.dailyActivity` 
+ADD COLUMN DayOfTheWeek DATE;
+```
+
 # 4.0 Analyse
 
 # 5.0 Share
