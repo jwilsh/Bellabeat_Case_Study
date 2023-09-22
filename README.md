@@ -83,15 +83,17 @@ The following file is selected and copied for analysis.
 dailyActivity_merged.csv
 
 ### 2.5 Tool
-We are using BigQuery in Google Cloud for data cleaning and transformation. Tableau is being used for the visualisations.
+We are using SQL in MySQL for data cleaning and transformation. Tableau is being used for the visualisations.
 
 # 3.0 Process
 
 ### 3.1 Setting-Up the Environement
-A new project is created withtin BigQuery whith a relevent title for the project 'bellebeat-capstone-case-study'. We then created a new dataset within the project with the title 'FitBit_Fitness_Tracker_Data
-'.
+A new schema is created withtin MySQL with a relevent title for the project 'bellabeat-capstone-case-study'. 
 
-![Preparing the Environement](https://github.com/jwilsh/Bellabeat_Case_Study/assets/98908958/0e7d8993-7c6e-4e1e-a5a2-45e072718bcd)
+```
+CREATE SCHEMA 'bellabeat-capstone-case-study'
+```
+
 
 ### 3.2 Importing the Dataset
 The .cvs files from ealrier were uploaded onto this newly created dataset.
@@ -99,15 +101,12 @@ The .cvs files from ealrier were uploaded onto this newly created dataset.
 ### 3.2 Preview the Data and it's Structure
 The .cvs files from ealrier were uploaded onto this newly created dataset. Here you can see a preview of the dataset.
 
-![Data Preview 2](https://github.com/jwilsh/Bellabeat_Case_Study/assets/98908958/dae534ce-65a4-4257-bb4a-d56fbeb27647)
+![Data Preview 1]
 
 You can check the structure of the data in the 'schema' tab.
 
-![Data Preview 1](https://github.com/jwilsh/Bellabeat_Case_Study/assets/98908958/e430154c-bc89-4460-842f-597fe0466dd2)
+![Data Preview 2]
 
-Information of the data including how many rows it contains in the 'Details' tab.
-
-![Data Preview 3](https://github.com/jwilsh/Bellabeat_Case_Study/assets/98908958/b0af7b7e-3296-43e3-a8c0-0f101db2e3ed)
 
 ### 3.3 Data Cleaning and Manipulation
 Now that we are familiar with the structure of the data we can clean the data by checking for any errors.
@@ -116,7 +115,7 @@ Now that we are familiar with the structure of the data we can clean the data by
 Its important to check that the same amount of participants have participated in all of our datasets.
 ```
 SELECT COUNT(distinct Id)
- FROM `bellebeat-capstone-case-study.FitBit_Fitness_Tracker_Data.dailyActivity`
+ FROM bellabeat_capstone_case_study.dailyactivity_merged;
 ```
 
 
@@ -127,14 +126,20 @@ All columns were checked for Null data or missing values. However none were foun
 ```
 SELECT Id
 
-FROM `bellebeat-capstone-case-study.FitBit_Fitness_Tracker_Data.dailyActivity` 
+FROM bellabeat_capstone_case_study.dailyactivity_merged
 
-WHERE Id is null
+WHERE Id is null;
 ```
 
 
 ### 3.3.2 Check If Correct Datatypes are Applied
-Luckily all of the collumns have the correct data type applied so there will be no need to chnage these.
+The 'ActivityDate' column currently has TEXT datatype and willneed to be changed to DATE. Luckily all of the rest of collumns have the correct data type applied so there will be no need to chnage these.
+
+```
+ALTER TABLE dailyactivity_merged
+
+MODIFY ActivityDate DATE;
+```
 
 ### 3.4 Data Manipulation & Transformation
 After checking for dirty data its now time for some data manipultion to get it ready for some analysis. Below are the steps I took in order to transform the data ready to create some visualisations with.
@@ -145,11 +150,30 @@ After checking for dirty data its now time for some data manipultion to get it r
 
 - Create new column TotalHours by converting new column TotalMinutes to number of hours.
 
-- Rearrange and rename columns.
+- Rearrange and rename columns. As well as removing unused columns.
 
 ```
-ALTER TABLE `bellebeat-capstone-case-study.FitBit_Fitness_Tracker_Data.dailyActivity` 
-ADD COLUMN DayOfTheWeek DATE;
+ALTER TABLE dailyactivity_merged ADD COLUMN TotalMinutes INT;
+
+UPDATE dailyactivity_merged SET TotalMinutes = VeryActiveMinutes + FairlyActiveMinutes + LightlyActiveMinutes + SedentaryMinutes;
+
+ALTER TABLE dailyactivity_merged ADD COLUMN TotalHours INT;
+
+UPDATE dailyactivity_merged SET Totalhours = TotalMinutes / 60;
+
+ALTER TABLE dailyactivity_merged DROP COLUMN LoggedActivitiesDistance;
+
+ALTER TABLE dailyactivity_merged DROP COLUMN SedentaryActiveDistance;
+
+UPDATE dailyactivity_merged SET TotalDistance = round(TotalDistance,2);
+
+UPDATE dailyactivity_merged SET TrackerDistance = round(TrackerDistance,2);
+
+UPDATE dailyactivity_merged SET VeryActiveDistance = round(VeryActiveDistance,2);
+
+UPDATE dailyactivity_merged SET ModeratelyActiveDistance = round(ModeratelyActiveDistance,2);
+
+UPDATE dailyactivity_merged SET LightActiveDistance = round(LightActiveDistance,2);
 ```
 
 # 4.0 Analyse
