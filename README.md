@@ -267,6 +267,24 @@ FROM dailyactivity_merged;
 Our data is now imported into Tableau where we can create visualisations to explain and communicate the findings within the data based on the analysis.
 
 
+### Calories vs. TotalSteps
+A visualisation has been made to check to see if there is any correlation between the amount of calories burned and the total amount of steps done.
+
+![TotalStepsvs.Calories_Vis]
+
+From the graph you can clearly see a postive correlation betwen the amount of calories burned and the steps taken.  However the data does include a couple of outliers who potenitally didn't participate properly in the study.
+
+### Calories vs. HoursLogged
+The next visualisation compares the amount of calories burned for every hour logged.
+
+![Caloriesvs.HoursLogged_Vis]
+
+The graph shows that there is a slight positive corelation between the amount of calroies burned and the total amount of hours logged. This will be mainly due to the large amount of sedentary hours logged by the participants in the study.
+Lots of people logged 24 hours and had a large range of calories burned from 1300-3500. 
+This chart also had several outliners which could have been from various reasons.
+
+### Activity Percentages
+
 
 # 6.0 Act
 
