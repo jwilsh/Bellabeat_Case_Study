@@ -245,10 +245,23 @@ FROM dailyactivity_merged;
 ![TotalHours_Statistics](https://github.com/jwilsh/Bellabeat_Case_Study/assets/98908958/f9f461cd-5697-4d72-bbd5-37e0ba49e3ec)
 
 
+```
+SELECT COUNT(CaloriesPerHour),
+AVG(CaloriesPerHour),
+STDDEV(CaloriesPerHour),
+MIN(CaloriesPerHour),
+MAX(CaloriesPerHour)
+FROM dailyactivity_merged;
+```
+
+![TotalHours_Statistics](https://github.com/jwilsh/Bellabeat_Case_Study/assets/98908958/f9f461cd-5697-4d72-bbd5-37e0ba49e3ec)
+
 ### 4.1 Statistical Findings
 1. From the final table and the statistics we can see that users had an average of 6507 steps per day which equated to an average of 4.41km per day. The daily recommended amount of steps to be made each day is 7500 which means that on average the participants used in the data are less active than they should be.
 
-2. 
+2. The amount of SedentaryMinutes tracked was on average 1084.47. This equates to ~18 hours whcih is something that needs to be worked in with an objective of lowering it. The large amount of SedentaryMinutes highlights that the majority of users weren't very active during the time that the information was collected.
+
+3. The average amount of calories burned per hour is 95. 
 
 # 5.0 Share
 
