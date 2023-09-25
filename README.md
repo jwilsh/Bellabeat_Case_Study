@@ -176,7 +176,70 @@ UPDATE dailyactivity_merged SET ModeratelyActiveDistance = round(ModeratelyActiv
 UPDATE dailyactivity_merged SET LightActiveDistance = round(LightActiveDistance,2);
 ```
 
+![Final Table]
+
+Now that the data has been manipulated and transformed. We are ready to perfom the analysis.
+
 # 4.0 Analyse
+
+### 4.1 Perform Calculations
+Firstly I have drawn a bunch of statistics from the important columns in the table. These statistics include,
+- Count(no. of nows)
+- Mean(average)
+- STD(standard Deviation)
+- Min & Max
+
+
+First up is the TotalSteps column.
+```
+SELECT COUNT(TotalSteps),
+AVG(TotalSteps),
+STDDEV(TotalSteps),
+MIN(TotalSteps),
+MAX(TotalSteps)
+FROM dailyactivity_merged;
+```
+
+![TotalSteps_statistics]
+
+
+```
+SELECT COUNT(TotalDistance),
+AVG(TotalDistance),
+STDDEV(TotalDistance),
+MIN(TotalDistance),
+MAX(TotalDistance)
+FROM dailyactivity_merged;
+```
+
+![TotalDistance_statistics]
+
+
+```
+SELECT COUNT(Calories),
+AVG(Calories),
+STDDEV(Calories),
+MIN(Calories),
+MAX(Calories)
+FROM dailyactivity_merged;
+```
+
+![Calories_statistics]
+
+
+```
+SELECT COUNT(TotalHours),
+AVG(TotalHours),
+STDDEV(TotalHours),
+MIN(TotalHours),
+MAX(TotalHours)
+FROM dailyactivity_merged;
+```
+
+![TotalHours_statistics]
+
+
+
 
 # 5.0 Share
 
