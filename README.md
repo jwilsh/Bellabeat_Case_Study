@@ -283,8 +283,10 @@ The graph shows that there is a slight positive corelation between the amount of
 Lots of people logged 24 hours and had a large range of calories burned from 1300-3500. 
 This chart also had several outliners which could have been from various reasons.
 
-### Activity Percentages
+### ActivityType Comparison
 
+
+![ActivityType_comparison_Vis]
 
 # 6.0 Act
 
