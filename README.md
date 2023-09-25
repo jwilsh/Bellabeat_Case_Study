@@ -161,9 +161,15 @@ ALTER TABLE dailyactivity_merged ADD COLUMN TotalHours INT;
 
 UPDATE dailyactivity_merged SET Totalhours = TotalMinutes / 60;
 
+ALTER TABLE dailyactivity_merged ADD COLUMN CaloriesPerHour INT;
+
+UPDATE dailyactivity_merged SET CaloriesPerHour = Calories / TotalHours;
+
 ALTER TABLE dailyactivity_merged DROP COLUMN LoggedActivitiesDistance;
 
 ALTER TABLE dailyactivity_merged DROP COLUMN SedentaryActiveDistance;
+
+ALTER TABLE dailyactivity_merged DROP COLUMN TrackerDistance;
 
 UPDATE dailyactivity_merged SET TotalDistance = round(TotalDistance,2);
 
@@ -216,11 +222,11 @@ FROM dailyactivity_merged;
 
 
 ```
-SELECT COUNT(Calories),
-AVG(Calories),
-STDDEV(Calories),
-MIN(Calories),
-MAX(Calories)
+SELECT COUNT(SedentaryMinutes),
+AVG(SedentaryMinutes),
+STDDEV(SedentaryMinutes),
+MIN(SedentaryMinutes),
+MAX(SedentaryMinutes)
 FROM dailyactivity_merged;
 ```
 
@@ -239,7 +245,10 @@ FROM dailyactivity_merged;
 ![TotalHours_Statistics](https://github.com/jwilsh/Bellabeat_Case_Study/assets/98908958/f9f461cd-5697-4d72-bbd5-37e0ba49e3ec)
 
 
+### 4.1 Statistical Findings
+1. From the final table and the statistics we can see that users had an average of 6507 steps per day which equated to an average of 4.41km per day. The daily recommended amount of steps to be made each day is 7500 which means that on average the participants used in the data are less active than they should be.
 
+2. 
 
 # 5.0 Share
 
