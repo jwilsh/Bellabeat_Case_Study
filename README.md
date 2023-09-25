@@ -176,7 +176,7 @@ UPDATE dailyactivity_merged SET ModeratelyActiveDistance = round(ModeratelyActiv
 UPDATE dailyactivity_merged SET LightActiveDistance = round(LightActiveDistance,2);
 ```
 
-![Final Table]
+![Final_table](https://github.com/jwilsh/Bellabeat_Case_Study/assets/98908958/695dfc88-2475-4c09-9323-4fe0071f80f3)
 
 Now that the data has been manipulated and transformed. We are ready to perfom the analysis.
 
@@ -200,7 +200,7 @@ MAX(TotalSteps)
 FROM dailyactivity_merged;
 ```
 
-![TotalSteps_statistics]
+![TotalSteps_Statistics](https://github.com/jwilsh/Bellabeat_Case_Study/assets/98908958/5ae54e78-9461-46a2-bf45-a448b55cfa03)
 
 
 ```
@@ -212,7 +212,7 @@ MAX(TotalDistance)
 FROM dailyactivity_merged;
 ```
 
-![TotalDistance_statistics]
+![TotalDistance_Statistics](https://github.com/jwilsh/Bellabeat_Case_Study/assets/98908958/98517b65-47d1-461b-aaf3-6d040c45d8aa)
 
 
 ```
@@ -224,7 +224,7 @@ MAX(Calories)
 FROM dailyactivity_merged;
 ```
 
-![Calories_statistics]
+![Calories_Statistics](https://github.com/jwilsh/Bellabeat_Case_Study/assets/98908958/052f423e-edef-4a41-8c71-91c2fff85181)
 
 
 ```
@@ -236,7 +236,7 @@ MAX(TotalHours)
 FROM dailyactivity_merged;
 ```
 
-![TotalHours_statistics]
+![TotalDistance_Statistics](https://github.com/jwilsh/Bellabeat_Case_Study/assets/98908958/98517b65-47d1-461b-aaf3-6d040c45d8aa)
 
 
 
