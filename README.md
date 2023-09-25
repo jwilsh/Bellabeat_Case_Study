@@ -182,7 +182,7 @@ UPDATE dailyactivity_merged SET ModeratelyActiveDistance = round(ModeratelyActiv
 UPDATE dailyactivity_merged SET LightActiveDistance = round(LightActiveDistance,2);
 ```
 
-![Final_table](https://github.com/jwilsh/Bellabeat_Case_Study/assets/98908958/695dfc88-2475-4c09-9323-4fe0071f80f3)
+![Final_table](https://github.com/jwilsh/Bellabeat_Case_Study/assets/98908958/c3bbf6cb-58ba-4e31-bc84-750cb22329b4)
 
 Now that the data has been manipulated and transformed. We are ready to perfom the analysis.
 
@@ -230,7 +230,7 @@ MAX(SedentaryMinutes)
 FROM dailyactivity_merged;
 ```
 
-![Calories_Statistics](https://github.com/jwilsh/Bellabeat_Case_Study/assets/98908958/052f423e-edef-4a41-8c71-91c2fff85181)
+![SedentaryMinutes_Statistics](https://github.com/jwilsh/Bellabeat_Case_Study/assets/98908958/610c4609-7979-42fa-bd14-8c0582dc8001)
 
 
 ```
@@ -254,16 +254,19 @@ MAX(CaloriesPerHour)
 FROM dailyactivity_merged;
 ```
 
-![TotalHours_Statistics](https://github.com/jwilsh/Bellabeat_Case_Study/assets/98908958/f9f461cd-5697-4d72-bbd5-37e0ba49e3ec)
+![CaloriesPerHour_Statistics](https://github.com/jwilsh/Bellabeat_Case_Study/assets/98908958/12213ec4-471a-4bd7-a8a6-948af0184b38)
 
 ### 4.1 Statistical Findings
 1. From the final table and the statistics we can see that users had an average of 6507 steps per day which equated to an average of 4.41km per day. The daily recommended amount of steps to be made each day is 7500 which means that on average the participants used in the data are less active than they should be.
 
 2. The amount of SedentaryMinutes tracked was on average 1084.47. This equates to ~18 hours whcih is something that needs to be worked in with an objective of lowering it. The large amount of SedentaryMinutes highlights that the majority of users weren't very active during the time that the information was collected.
 
-3. The average amount of calories burned per hour is 95. 
+3. The average amount of calories burned per hour is 95. This equates to 2280 per day. Its hard to come to any conclusions with this data as the amount of calories burned and the amount needed to be burned depends on too many external factors such as age, gender, profession, body anatomy as well as others. 
 
 # 5.0 Share
+Our data is now imported into Tableau where we can create visualisations to explain and communicate the findings within the data based on the analysis.
+
+
 
 # 6.0 Act
 
