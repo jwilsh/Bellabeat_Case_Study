@@ -236,7 +236,7 @@ MAX(TotalHours)
 FROM dailyactivity_merged;
 ```
 
-![TotalDistance_Statistics](https://github.com/jwilsh/Bellabeat_Case_Study/assets/98908958/98517b65-47d1-461b-aaf3-6d040c45d8aa)
+![TotalHours_Statistics](https://github.com/jwilsh/Bellabeat_Case_Study/assets/98908958/f9f461cd-5697-4d72-bbd5-37e0ba49e3ec)
 
 
 
