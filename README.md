@@ -170,32 +170,46 @@ UPDATE dailyactivity_merged SET CaloriesPerHour = Calories / TotalHours;
 
 ### ActivityDate format changed and Weekday column created
 ```
-UPDATE dailyactivity_merged SET ActivityDate
-CASE WHEN ActivityDate LIKE '1%' THEN 01
-WHEN ActivityDate LIKE '2%' THEN 02
-WHEN ActivityDate LIKE '3%' THEN 03
-WHEN ActivityDate LIKE '4%' THEN 04
-WHEN ActivityDate LIKE '5%' THEN 05
-WHEN ActivityDate LIKE '6%' THEN 06
-WHEN ActivityDate LIKE '7%' THEN 07
-WHEN ActivityDate LIKE '8%' THEN 08
-WHEN ActivityDate LIKE '9%' THEN 09
-WHEN ActivityDate LIKE '%/1/%' THEN /01/
-WHEN ActivityDate LIKE '%/2/%' THEN /02/
-WHEN ActivityDate LIKE '%/3/%' THEN /03/
-WHEN ActivityDate LIKE '%/4/%' THEN /04/
-WHEN ActivityDate LIKE '%/5/%' THEN /05/
-WHEN ActivityDate LIKE '%/6/%' THEN /06/
-WHEN ActivityDate LIKE '%/7/%' THEN /07/
-WHEN ActivityDate LIKE '%/8/%' THEN /08/
-WHEN ActivityDate LIKE '%/9/%' THEN /09/
-END AS Date;
+UPDATE dailyactivity_merged SET ActivityDate = REPLACE(ActivityDate, '1/', '01/');
+UPDATE dailyactivity_merged SET ActivityDate = REPLACE(ActivityDate, '2/', '02/');
+UPDATE dailyactivity_merged SET ActivityDate = REPLACE(ActivityDate, '3/', '03/');
+UPDATE dailyactivity_merged SET ActivityDate = REPLACE(ActivityDate, '4/', '04/');
+UPDATE dailyactivity_merged SET ActivityDate = REPLACE(ActivityDate, '5/', '05/');
+UPDATE dailyactivity_merged SET ActivityDate = REPLACE(ActivityDate, '6/', '06/');
+UPDATE dailyactivity_merged SET ActivityDate = REPLACE(ActivityDate, '7/', '07/');
+UPDATE dailyactivity_merged SET ActivityDate = REPLACE(ActivityDate, '8/', '08/');
+UPDATE dailyactivity_merged SET ActivityDate = REPLACE(ActivityDate, '9/', '09/');
 
-UPDATE dailyactivity_merged SET ActivityDate = CONCAT(ActivityDate LIKE 
+UPDATE dailyactivity_merged SET ActivityDate = REPLACE(ActivityDate, '101', '11');
+UPDATE dailyactivity_merged SET ActivityDate = REPLACE(ActivityDate, '102', '12');
+UPDATE dailyactivity_merged SET ActivityDate = REPLACE(ActivityDate, '103', '13');
+UPDATE dailyactivity_merged SET ActivityDate = REPLACE(ActivityDate, '104', '14');
+UPDATE dailyactivity_merged SET ActivityDate = REPLACE(ActivityDate, '105', '15');
+UPDATE dailyactivity_merged SET ActivityDate = REPLACE(ActivityDate, '106', '16');
+UPDATE dailyactivity_merged SET ActivityDate = REPLACE(ActivityDate, '107', '17');
+UPDATE dailyactivity_merged SET ActivityDate = REPLACE(ActivityDate, '108', '18');
+UPDATE dailyactivity_merged SET ActivityDate = REPLACE(ActivityDate, '109', '19');
+UPDATE dailyactivity_merged SET ActivityDate = REPLACE(ActivityDate, '201', '21');
+UPDATE dailyactivity_merged SET ActivityDate = REPLACE(ActivityDate, '202', '22');
+UPDATE dailyactivity_merged SET ActivityDate = REPLACE(ActivityDate, '203', '23');
+UPDATE dailyactivity_merged SET ActivityDate = REPLACE(ActivityDate, '204', '24');
+UPDATE dailyactivity_merged SET ActivityDate = REPLACE(ActivityDate, '205', '25');
+UPDATE dailyactivity_merged SET ActivityDate = REPLACE(ActivityDate, '206', '26');
+UPDATE dailyactivity_merged SET ActivityDate = REPLACE(ActivityDate, '207', '27');
+UPDATE dailyactivity_merged SET ActivityDate = REPLACE(ActivityDate, '208', '28');
+UPDATE dailyactivity_merged SET ActivityDate = REPLACE(ActivityDate, '209', '29');
+UPDATE dailyactivity_merged SET ActivityDate = REPLACE(ActivityDate, '216', '2016');
+UPDATE dailyactivity_merged SET ActivityDate = REPLACE(ActivityDate, '/', '-');
 
-ALTER TABLE dailyactivity_merged ADD COLUMN Weekday VARCHAR(10);
 
-UPDATE dailyactivity_merged SET Weekday = Weekday(Activitydate);
+ALTER TABLE dailyactivity_merged ADD COLUMN NewDate DATE;
+
+UPDATE dailyactivity_merged SET New_Date = CONCAT(RIGHT(ActivityDate,4), '-', LEFT(ActivityDate,2), '-', SUBSTR(ActivityDate,4,2));
+
+
+ALTER TABLE dailyactivity_merged ADD COLUMN DayOfWeek TEXT;
+
+UPDATE dailyactivity_merged SET DayOfWeek = DAYNAME(NewDate);
 ```
 
 
@@ -218,7 +232,7 @@ UPDATE dailyactivity_merged SET ModeratelyActiveDistance = round(ModeratelyActiv
 UPDATE dailyactivity_merged SET LightActiveDistance = round(LightActiveDistance,2);
 ```
 
-![Final_table](https://github.com/jwilsh/Bellabeat_Case_Study/assets/98908958/c3bbf6cb-58ba-4e31-bc84-750cb22329b4)
+![Final_table](https://github.com/jwilsh/Bellabeat_Case_Study/assets/98908958/75f98a17-67a6-434a-89b8-04c3f1aa6e7e)
 
 Now that the data has been manipulated and transformed. We are ready to perfom the analysis.
 
