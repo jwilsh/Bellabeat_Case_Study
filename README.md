@@ -2,7 +2,7 @@
 This project is a documentation of my capstone project. The final case study at the end of the last module from the [Google Data Analytics Certificate](https://www.coursera.org/professional-certificates/google-data-analytics) course. This case study showcases some of the skills that I have inherited during the course across different tools used in data analysis.
 
 # Scenario
-Bellabeat is a high-tech manufacturer of health-focused products specifically for women. Bellabeqat is a successful small company, however they have a vision of becoming one of the major players in the global smart device market. The Co-founder of Bellabeat Urška Sršen, beleives that by analysing smart device fitness data can help unlock new growth opportunities for the company. 
+Bellabeat is a high-tech manufacturer of health-focused products specifically for women. Bellabeat is a successful small company, however they have a vision of becoming one of the major players in the global smart device market. The Co-founder of Bellabeat Urška Sršen, believes that by analyzing smart device fitness data can help unlock new growth opportunities for the company. 
 
 We will be looking at data from an existing dataset [FitBit Fitness Tracker Data](https://www.kaggle.com/datasets/arashnic/fitbit) to determine if there are any trends that we can identify. These insights will then be used to give high level recommendations to guide the marketing strategy for the company.
 
@@ -25,7 +25,7 @@ Use the data provided in the [FitBit Fitness Tracker Data](https://www.kaggle.co
 - Your top high-level content recommendations based on your analysis
 
 ### 1.4 Key Stakeholders:
-- **Urška Sršen:** Bellabeat’s cofounder and Chief Creative Officer
+- **Urška Sršen:** Bellabeat’s co founder and Chief Creative Officer
 - **Sando Mur:** Mathematician and Bellabeat’s cofounder; key member of the Bellabeat executive team
 - **Bellabeat marketing analytics team:** A team of data analysts responsible for collecting, analyzing, and
 reporting data that helps guide Bellabeat’s marketing strategy.
@@ -55,8 +55,8 @@ and beauty, and mindfulness based on their lifestyle and goals.
 - Data collected includes physical activity recorded in minutes, heart rate, sleep monitoring, daily activity and steps.
 
 ### 2.2 Limitations of Data Set:
-- Data is collected 5 years ago in 2016. Users’ daily activity, fitness and sleeping habits, diet and food consumption may have changed since then. Data may not be timely or relevant.
-- Sample size of 30 FitBit users is not representative of the entire fitness population. The central limit theorem general rule of n≥30 applies and we can use the t test for statstic reference. However, a larger sample size is preferred for the analysis.
+- Data was collected 5 years ago in 2016. Users’ daily activity, fitness and sleeping habits, diet and food consumption may have changed since then. Data may not be timely or relevant.
+- Sample size of 30 FitBit users is not representative of the entire fitness population. The central limit theorem general rule of n≥30 applies and we can use the t test for statistical reference. However, a larger sample size is preferred for the analysis.
 - As data is collected in a survey, we are unable to ascertain its integrity or accuracy.
 - After further investigation with n_distinct() to check for unique user Id, the set has 33 user data from daily activity, 24 from sleep and only 8 from weight. There are 3 extra users and some users did not record their data for tracking daily activity and sleep.
 - For the 8 user data for weight, 5 users manually entered their weight and 3 recorded via a connected wifi device (eg: wifi scale).
@@ -83,12 +83,12 @@ The following file is selected and copied for analysis.
 dailyActivity_merged.csv
 
 ### 2.5 Tool
-We are using SQL in MySQL for data cleaning and transformation. Tableau is being used for the visualisations.
+We are using SQL in MySQL for data cleaning and transformation. Tableau is being used for the visualizations.
 
 # 3.0 Process
 
-### 3.1 Setting-Up the Environement
-A new schema is created withtin MySQL with a relevent title for the project 'bellabeat-capstone-case-study'. 
+### 3.1 Setting-Up the Environment
+A new schema is created within MySQL with a relevant title for the project 'bellabeat-capstone-case-study'. 
 
 ```
 CREATE SCHEMA 'bellabeat-capstone-case-study'
@@ -96,10 +96,10 @@ CREATE SCHEMA 'bellabeat-capstone-case-study'
 
 
 ### 3.2 Importing the Dataset
-The .cvs files from ealrier were uploaded onto this newly created dataset.
+The .cvs files from earlier were uploaded onto this newly created dataset.
 
 ### 3.2 Preview the Data and it's Structure
-The .cvs files from ealrier were uploaded onto this newly created dataset. Here you can see a preview of the dataset.
+The .cvs files from earlier were uploaded onto this newly created dataset. Here you can see a preview of the dataset.
 
 ![Data Preview 1]
 
@@ -132,8 +132,8 @@ WHERE Id is null;
 ```
 
 
-### 3.3.2 Check If Correct Datatypes are Applied
-The 'ActivityDate' column currently has TEXT datatype and willneed to be changed to DATE. Luckily all of the rest of collumns have the correct data type applied so there will be no need to chnage these.
+### 3.3.2 Check If Correct DataTypes are Applied
+The 'ActivityDate' column currently has TEXT datatype and will need to be changed to DATE. Luckily all of the rest of columns have the correct data type applied so there will be no need to change these.
 
 ```
 ALTER TABLE dailyactivity_merged
@@ -142,13 +142,13 @@ MODIFY ActivityDate DATE;
 ```
 
 ### 3.4 Data Manipulation & Transformation
-After checking for dirty data its now time for some data manipultion to get it ready for some analysis. Below are the steps I took in order to transform the data ready to create some visualisations with.
+After checking for dirty data its now time for some data manipulation to get it ready for some analysis. Below are the steps I took in order to transform the data ready to create some visualizations with.
 
-- Create new column DayOfTheWeek by generating date in the form of day of the week for further analysis.
+- Create a new column DayOfTheWeek by generating date in the form of day of the week for further analysis.
 
-- Create new column TotalMinutes being the sum of VeryActiveMinutes, FairlyActiveMinutes, LightlyActiveMinutes and SedentaryMinutes.
+- Create a new column TotalMinutes being the sum of VeryActiveMinutes, FairlyActiveMinutes, LightlyActiveMinutes and SedentaryMinutes.
 
-- Create new column TotalHours by converting new column TotalMinutes to number of hours.
+- Create a new column TotalHours by converting new column TotalMinutes to number of hours.
 
 - Rearrange and rename columns. As well as removing unused columns.
 
@@ -234,9 +234,9 @@ UPDATE dailyactivity_merged SET LightActiveDistance = round(LightActiveDistance,
 
 ![Final_table](https://github.com/jwilsh/Bellabeat_Case_Study/assets/98908958/75f98a17-67a6-434a-89b8-04c3f1aa6e7e)
 
-Now that the data has been manipulated and transformed. We are ready to perfom the analysis.
+Now that the data has been manipulated and transformed. We are ready to perform the analysis.
 
-# 4.0 Analyse
+# 4.0 Analyze
 
 ### 4.1 Perform Calculations
 Firstly I have drawn a bunch of statistics from the important columns in the table. These statistics include,
@@ -262,7 +262,7 @@ FROM dailyactivity_merged;
 ```
 SELECT COUNT(TotalDistance),
 AVG(TotalDistance),
-STDDEV(TotalDistance),
+STDDEV(Total Distance),
 MIN(TotalDistance),
 MAX(TotalDistance)
 FROM dailyactivity_merged;
@@ -309,20 +309,20 @@ FROM dailyactivity_merged;
 ### 4.1 Statistical Findings
 1. From the final table and the statistics we can see that users had an average of 6507 steps per day which equated to an average of 4.41km per day. The daily recommended amount of steps to be made each day is 7500 which means that on average the participants used in the data are less active than they should be.
 
-2. The amount of SedentaryMinutes tracked was on average 1084.47. This equates to ~18 hours whcih is something that needs to be worked in with an objective of lowering it. The large amount of SedentaryMinutes highlights that the majority of users weren't very active during the time that the information was collected.
+2. The amount of SedentaryMinutes tracked was on average 1084.47. This equates to ~18 hours which is something that needs to be worked in with an objective of lowering it. The large amount of SedentaryMinutes highlights that the majority of users weren't very active during the time that the information was collected.
 
 3. The average amount of calories burned per hour is 95. This equates to 2280 per day. Its hard to come to any conclusions with this data as the amount of calories burned and the amount needed to be burned depends on too many external factors such as age, profession, body anatomy as well as others. 
 
 # 5.0 Share
-Our data is now imported into Tableau where we can create visualisations to explain and communicate the findings within the data based on the analysis.
+Our data is now imported into Tableau where we can create visualizations to explain and communicate the findings within the data based on the analysis.
 
 
 ### Calories vs. TotalSteps
-A visualisation has been made to check to see if there is any correlation between the amount of calories burned and the total amount of steps done.
+A visualization has been made to check to see if there is any correlation between the amount of calories burned and the total amount of steps done.
 
 ![TotalSteps_calories](https://github.com/jwilsh/Bellabeat_Case_Study/assets/98908958/5368bfd6-f3a9-490f-a831-c0ce3f86cd05)
 
-From the graph you can clearly see a postive correlation betwen the amount of calories burned and the steps taken.  However the data does include a couple of outliers who potenitally didn't participate properly in the study.
+From the graph you can clearly see a positive correlation between the amount of calories burned and the steps taken.  However the data does include a couple of outliers who potentially didn't participate properly in the study.
 
 
 ### TotalSteps Per Day
@@ -333,40 +333,40 @@ This bar chart shows the total amount of steps per day by all of the participant
 From the chart we are able to see that during the week, Tuesday was the most active day and that Saturday was the busiest day on the weekend. We can also note that Friday was by far the least active day of the week.
 
 ### Calories vs. HoursLogged
-The next visualisation compares the amount of calories burned for every hour logged.
+The next visualization compares the amount of calories burned for every hour logged.
 
 ![HoursLogged_calories](https://github.com/jwilsh/Bellabeat_Case_Study/assets/98908958/cbe6bea0-d7bf-4a4b-bbc4-0b33ff069808)
 
-The graph shows that there is a slight positive corelation between the amount of calroies burned and the total amount of hours logged. This will be mainly due to the large amount of sedentary hours logged by the participants in the study.
+The graph shows that there is a slight positive correlation between the amount of calories burned and the total amount of hours logged. This will be mainly due to the large amount of sedentary hours logged by the participants in the study.
 Lots of people logged 24 hours and had a large range of calories burned from 1300-3500. 
-This chart also had several outliners which could have been from various reasons.
+This chart also had several outliers which could have been for various reasons.
 
 ### ActivityType Comparison
 This pie chart shows the distribution of the logged minutes from the participants.
 
 ![LoggedActivity](https://github.com/jwilsh/Bellabeat_Case_Study/assets/98908958/5ccb96f8-69f1-4ae0-b3f5-d07dd776384a)
 
-What we can take away from this visualisation is that the vast majority of the logged minutes were sedentary which means that on average the paricipants weren't very active during the study.
+What we can take away from this visualization is that the vast majority of the logged minutes were sedentary which means that on average the participants weren't very active during the study.
 Sedentary minutes took up a staggering 84.6%. This indicates to us that the participants were often using the FitBit app to run daily errands and other light forms of movement.
-Very Active and Fairly Active made up a tiny percentage of logged activity which tells us that most participants were raerly using their device to exercise with.
+Very Active and Fairly Active made up a tiny percentage of logged activity which tells us that most participants were rarely using their device to exercise with.
 
 # 6.0 Act
 
 ### Conclusions
-In this final step I will be sumarizing my conclusions based on the analysis made and then providng my recommendations for the company to try to meet their business objectives.
+In this final step I will be summarizing my conclusions based on the analysis made and then providing my recommendations for the company to try to meet their business objectives.
 
-- The main conclusion that we can draw from this dataset is that most of the users on average to not comply with the current health recomendations for daily activity. With an average of 6507 steps per day or 4.41km per day, this falls short of the CDC recomendations. According to CDC taking 8,000 steps per day was associated with a 51% lower risk for all-cause mortality (or death from all causes). Taking 12,000 steps per day was associated with a 65% lower risk compared with taking 4,000 steps. Bellabeat can encourage people to take at least 8 000 explaining the benefits for their health. 
+- The main conclusion that we can draw from this dataset is that most of the users on average do not comply with the current health recommendations for daily activity. With an average of 6507 steps per day or 4.41km per day, this falls short of the CDC recommendations. According to the CDC, taking 8,000 steps per day was associated with a 51% lower risk for all-cause mortality (or death from all causes). Taking 12,000 steps per day was associated with a 65% lower risk compared with taking 4,000 steps. Bellabeat can encourage people to take at least 8 000 explaining the benefits for their health. 
 - The vast majority of the users 84.6% are only using their FitBit device to track their everyday light activities and don't use it to track their exercise and overall lifestyle.
 - We can notice that users seem to have prefered days of exercise such as Tuesday during the week and Saturday on the weekend. They also have days where they typically do less exercise such as friday. This is most likely due to other factors such as having plans after finishing the working week.
-- There was a positive correlation between the the amount of activity that the participants did and the amount of calories that they burned. There were of cause outliers as the data didn't take into consideration plenty of factors including age, height/weight, and profession.
+- There was a positive correlation between the amount of activity that the participants did and the amount of calories that they burned. There were of course outliers as the data didn't take into consideration plenty of factors including age, height/weight, and profession.
 
-### Recomendations
+### Recommendations
 
 ### Daily Notifications
-Despite using the device the majority of users are not active enough. One idea to try to help out with participation could be notifications. Either to the device or at least to the users mobile to alert them that they haven't been active enough on a given day and to try and give some encouragement to meet their fitness goal for the day.
+Despite using the device the majority of users are not active enough. One idea to try to help out with participation could be notifications. Either to the device or at least to the user's mobile to alert them that they haven't been active enough on a given day and to try and give some encouragement to meet their fitness goal for the day.
 
 ### Rewards
-By rewarding consistant users with benefits such as access to premium Bellabeat services within the app, you can help increase the user participation. For an example if users can meet their fitness goals for a whole week then they could be granted 24 hours free acces to premium Bellabeat services. 
+By rewarding consistent users with benefits such as access to premium Bellabeat services within the app, you can help increase the user participation. For example if users can meet their fitness goals for a whole week then they could be granted 24 hours free access to premium Bellabeat services. 
 
 ### Campaign
 Make sure the online campaign portrays the Bellabeat app more than just a fitness activity app. It should be seen as a guide that empowers women to strike a balance in their personal and professional life and their health habits by educating and motivating them through daily app recommendations.
@@ -376,3 +376,4 @@ Make sure the online campaign portrays the Bellabeat app more than just a fitnes
 * https://github.com/jwilsh
 * https://www.kaggle.com/jwilsh
 * https://www.linkedin.com/in/jack-wilshere-70513a107/
+
