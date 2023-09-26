@@ -330,7 +330,7 @@ This bar chart shows the total amount of steps per day by all of the participant
 
 ![TotalStepsPerDay](https://github.com/jwilsh/Bellabeat_Case_Study/assets/98908958/25579329-f587-435d-83fc-e94a80a782b4)
 
-From the chart we are able to see that
+From the chart we are able to see that during the week, Tuesday was the most active day and that Saturday was the busiest day on the weekend. We can also note that Friday was by far the least active day of the week.
 
 ### Calories vs. HoursLogged
 The next visualisation compares the amount of calories burned for every hour logged.
@@ -347,9 +347,11 @@ This pie chart shows the distribution of the logged minutes from the participant
 ![LoggedActivity](https://github.com/jwilsh/Bellabeat_Case_Study/assets/98908958/5ccb96f8-69f1-4ae0-b3f5-d07dd776384a)
 
 What we can take away from this visualisation is that the vast majority of the logged minutes were sedentary which means that on average the paricipants weren't very active during the study.
+Sedentary minutes took up a staggering 84.6%. This indicates to us that the participants were often using the FitBit app to run daily errands and other light forms of movement.
+Very Active and Fairly Active made up a tiny percentage of logged activity which tells us that most participants were raerly using their device to exercise with.
 
 # 6.0 Act
-
+In this final step I will be 
 
 ## Contact
 * https://github.com/jwilsh
