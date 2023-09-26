@@ -371,5 +371,5 @@ Make sure the online campaign portrays the Bellabeat app more than just a fitnes
 ## Contact
 * https://github.com/jwilsh
 * https://www.kaggle.com/jwilsh
-* https://www.linkedin.com/in/jack-wilshere-70513a107/
+* https://www.linkedin.com/in/jack-wilshere/
 
