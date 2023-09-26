@@ -168,10 +168,34 @@ ALTER TABLE dailyactivity_merged ADD COLUMN CaloriesPerHour INT;
 UPDATE dailyactivity_merged SET CaloriesPerHour = Calories / TotalHours;
 ```
 
-### I have changed the format of the Activity Date column so that it conforms with SQL requirements
+### ActivityDate format changed and Weekday column created
 ```
-ALTER TABLE dailyactivity_merged ADD COLUMN TotalMinutes INT;
+UPDATE dailyactivity_merged SET ActivityDate
+CASE WHEN ActivityDate LIKE '1%' THEN 01
+WHEN ActivityDate LIKE '2%' THEN 02
+WHEN ActivityDate LIKE '3%' THEN 03
+WHEN ActivityDate LIKE '4%' THEN 04
+WHEN ActivityDate LIKE '5%' THEN 05
+WHEN ActivityDate LIKE '6%' THEN 06
+WHEN ActivityDate LIKE '7%' THEN 07
+WHEN ActivityDate LIKE '8%' THEN 08
+WHEN ActivityDate LIKE '9%' THEN 09
+WHEN ActivityDate LIKE '%/1/%' THEN 01
+WHEN ActivityDate LIKE '%/2/%' THEN 02
+WHEN ActivityDate LIKE '%/3/%' THEN 03
+WHEN ActivityDate LIKE '%/4/%' THEN 04
+WHEN ActivityDate LIKE '%/5/%' THEN 05
+WHEN ActivityDate LIKE '%/6/%' THEN 06
+WHEN ActivityDate LIKE '%/7/%' THEN 07
+WHEN ActivityDate LIKE '%/8/%' THEN 08
+WHEN ActivityDate LIKE '%/9/%' THEN 09
+END AS Date;
 
+UPDATE dailyactivity_merged SET ActivityDate = CONCAT(
+
+ALTER TABLE dailyactivity_merged ADD COLUMN Weekday VARCHAR(10);
+
+UPDATE dailyactivity_merged SET Weekday = Weekday(Activitydate);
 ```
 
 
