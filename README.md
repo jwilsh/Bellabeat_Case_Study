@@ -320,9 +320,11 @@ Lots of people logged 24 hours and had a large range of calories burned from 130
 This chart also had several outliners which could have been from various reasons.
 
 ### ActivityType Comparison
-
+This pie chart shows the distribution of the logged minutes from the participants.
 
 ![ActivityType_comparison_Vis]
+
+What we can take away from this visualisation is that the vast majority of the logged minutes were sedentary which means that on average the paricipants weren't very active during the study.
 
 # 6.0 Act
 
