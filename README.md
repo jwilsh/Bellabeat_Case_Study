@@ -152,6 +152,8 @@ After checking for dirty data its now time for some data manipultion to get it r
 
 - Rearrange and rename columns. As well as removing unused columns.
 
+
+### First I will create the new columns
 ```
 ALTER TABLE dailyactivity_merged ADD COLUMN TotalMinutes INT;
 
@@ -164,7 +166,17 @@ UPDATE dailyactivity_merged SET Totalhours = TotalMinutes / 60;
 ALTER TABLE dailyactivity_merged ADD COLUMN CaloriesPerHour INT;
 
 UPDATE dailyactivity_merged SET CaloriesPerHour = Calories / TotalHours;
+```
 
+### I have changed the format of the Activity Date column so that it conforms with SQL requirements
+```
+ALTER TABLE dailyactivity_merged ADD COLUMN TotalMinutes INT;
+
+```
+
+
+### Then I will delete unused columns and round colums to 2 decimal places
+```
 ALTER TABLE dailyactivity_merged DROP COLUMN LoggedActivitiesDistance;
 
 ALTER TABLE dailyactivity_merged DROP COLUMN SedentaryActiveDistance;
