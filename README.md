@@ -320,14 +320,22 @@ Our data is now imported into Tableau where we can create visualisations to expl
 ### Calories vs. TotalSteps
 A visualisation has been made to check to see if there is any correlation between the amount of calories burned and the total amount of steps done.
 
-![TotalStepsvs.Calories_Vis]
+![TotalSteps_calories](https://github.com/jwilsh/Bellabeat_Case_Study/assets/98908958/5368bfd6-f3a9-490f-a831-c0ce3f86cd05)
 
 From the graph you can clearly see a postive correlation betwen the amount of calories burned and the steps taken.  However the data does include a couple of outliers who potenitally didn't participate properly in the study.
+
+
+### TotalSteps Per Day
+This bar chart shows the total amount of steps per day by all of the participants.
+
+![TotalStepsPerDay](https://github.com/jwilsh/Bellabeat_Case_Study/assets/98908958/25579329-f587-435d-83fc-e94a80a782b4)
+
+From the chart we are able to see that
 
 ### Calories vs. HoursLogged
 The next visualisation compares the amount of calories burned for every hour logged.
 
-![Caloriesvs.HoursLogged_Vis]
+![HoursLogged_calories](https://github.com/jwilsh/Bellabeat_Case_Study/assets/98908958/cbe6bea0-d7bf-4a4b-bbc4-0b33ff069808)
 
 The graph shows that there is a slight positive corelation between the amount of calroies burned and the total amount of hours logged. This will be mainly due to the large amount of sedentary hours logged by the participants in the study.
 Lots of people logged 24 hours and had a large range of calories burned from 1300-3500. 
@@ -336,7 +344,7 @@ This chart also had several outliners which could have been from various reasons
 ### ActivityType Comparison
 This pie chart shows the distribution of the logged minutes from the participants.
 
-![ActivityType_comparison_Vis]
+![LoggedActivity](https://github.com/jwilsh/Bellabeat_Case_Study/assets/98908958/5ccb96f8-69f1-4ae0-b3f5-d07dd776384a)
 
 What we can take away from this visualisation is that the vast majority of the logged minutes were sedentary which means that on average the paricipants weren't very active during the study.
 
