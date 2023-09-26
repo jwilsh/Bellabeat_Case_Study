@@ -213,7 +213,7 @@ UPDATE dailyactivity_merged SET DayOfWeek = DAYNAME(NewDate);
 ```
 
 
-### Then I will delete unused columns and round colums to 2 decimal places
+### Then I will delete unused columns and round columns to 2 decimal places
 ```
 ALTER TABLE dailyactivity_merged DROP COLUMN LoggedActivitiesDistance;
 
@@ -311,7 +311,7 @@ FROM dailyactivity_merged;
 
 2. The amount of SedentaryMinutes tracked was on average 1084.47. This equates to ~18 hours whcih is something that needs to be worked in with an objective of lowering it. The large amount of SedentaryMinutes highlights that the majority of users weren't very active during the time that the information was collected.
 
-3. The average amount of calories burned per hour is 95. This equates to 2280 per day. Its hard to come to any conclusions with this data as the amount of calories burned and the amount needed to be burned depends on too many external factors such as age, gender, profession, body anatomy as well as others. 
+3. The average amount of calories burned per hour is 95. This equates to 2280 per day. Its hard to come to any conclusions with this data as the amount of calories burned and the amount needed to be burned depends on too many external factors such as age, profession, body anatomy as well as others. 
 
 # 5.0 Share
 Our data is now imported into Tableau where we can create visualisations to explain and communicate the findings within the data based on the analysis.
@@ -351,9 +351,28 @@ Sedentary minutes took up a staggering 84.6%. This indicates to us that the part
 Very Active and Fairly Active made up a tiny percentage of logged activity which tells us that most participants were raerly using their device to exercise with.
 
 # 6.0 Act
-In this final step I will be 
+
+### Conclusions
+In this final step I will be sumarizing my conclusions based on the analysis made and then providng my recommendations for the company to try to meet their business objectives.
+
+- The main conclusion that we can draw from this dataset is that most of the users on average to not comply with the current health recomendations for daily activity. With an average of 6507 steps per day or 4.41km per day, this falls short of the CDC recomendations. According to CDC taking 8,000 steps per day was associated with a 51% lower risk for all-cause mortality (or death from all causes). Taking 12,000 steps per day was associated with a 65% lower risk compared with taking 4,000 steps. Bellabeat can encourage people to take at least 8 000 explaining the benefits for their health. 
+- The vast majority of the users 84.6% are only using their FitBit device to track their everyday light activities and don't use it to track their exercise and overall lifestyle.
+- We can notice that users seem to have prefered days of exercise such as Tuesday during the week and Saturday on the weekend. They also have days where they typically do less exercise such as friday. This is most likely due to other factors such as having plans after finishing the working week.
+- There was a positive correlation between the the amount of activity that the participants did and the amount of calories that they burned. There were of cause outliers as the data didn't take into consideration plenty of factors including age, height/weight, and profession.
+
+### Recomendations
+
+### Daily Notifications
+Despite using the device the majority of users are not active enough. One idea to try to help out with participation could be notifications. Either to the device or at least to the users mobile to alert them that they haven't been active enough on a given day and to try and give some encouragement to meet their fitness goal for the day.
+
+### Rewards
+By rewarding consistant users with benefits such as access to premium Bellabeat services within the app, you can help increase the user participation. For an example if users can meet their fitness goals for a whole week then they could be granted 24 hours free acces to premium Bellabeat services. 
+
+### Campaign
+Make sure the online campaign portrays the Bellabeat app more than just a fitness activity app. It should be seen as a guide that empowers women to strike a balance in their personal and professional life and their health habits by educating and motivating them through daily app recommendations.
+
 
 ## Contact
 * https://github.com/jwilsh
 * https://www.kaggle.com/jwilsh
-* 
+* https://www.linkedin.com/in/jack-wilshere-70513a107/
