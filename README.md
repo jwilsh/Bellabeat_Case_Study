@@ -101,11 +101,7 @@ The .cvs files from earlier were uploaded onto this newly created dataset.
 ### 3.2 Preview the Data and it's Structure
 The .cvs files from earlier were uploaded onto this newly created dataset. Here you can see a preview of the dataset.
 
-![Data Preview 1]
-
-You can check the structure of the data in the 'schema' tab.
-
-![Data Preview 2]
+![DataPreview](https://github.com/jwilsh/Bellabeat_Case_Study/assets/98908958/b3b62726-7499-4d61-a081-a55e4ece4ee3)
 
 
 ### 3.3 Data Cleaning and Manipulation
